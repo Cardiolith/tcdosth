@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: TC-MALL
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://58.87.127.76:3306/springurm?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+    username: root
+    password: Cardio1024.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    show-sql: true
+LOCAL_IP: 127.0.0.1
+eureka:
+  instance:
+    ip-address: ${LOCAL_IP}
+    prefer-ip-address: true
+    instance-id: ${LOCAL_IP}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://58.87.127.76:1111/eureka/
